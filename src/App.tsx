@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {usePageView, useJitsu} from "./useJitsu";
+import {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+let jitsuOpts = {
+  key: "js.u6j86j36xlgpe9mtgzq99h.dagluu2864l4dwgn5iztv8",
+  tracking_host: "https://t.jitsu.com"
+};
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+  const { jitsu } = useJitsu(jitsuOpts);
+  usePageView(jitsu);
+
+  return <>
+    <h1>Jitsu & React Demo</h1>
+    <Switch>
+      <Route path="/" exact>
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          Main page. Go to <Link to="/page">/page</Link>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      </Route>
+      <Route path="/page" exact>
+        <p>
+          /page: Go to <Link to="/">home page</Link>
+        </p>
+      </Route>
+    </Switch>
+  </>
 }
 
 export default App;
