@@ -5,8 +5,8 @@ This project shows how to track events with [Jitsu](https://jitsu) and React app
 
 See:
 
- - [useJitsu.ts](https://github.com/jitsucom/jitsu-react-example/blob/master/src/useJitsu.ts) — simple hooks
- - [App.tsx](https://github.com/jitsucom/jitsu-react-example/blob/master/src/App.tsx) — how those hooks are used with react-router
+ - [useJitsu.ts](https://github.com/jitsucom/jitsu-react-example/blob/main/src/useJitsu.ts) — simple hooks
+ - [App.tsx](https://github.com/jitsucom/jitsu-react-example/blob/main/src/App.tsx) — how those hooks are used with react-router
 
 ## How to use
 
